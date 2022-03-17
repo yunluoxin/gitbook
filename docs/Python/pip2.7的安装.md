@@ -32,7 +32,7 @@ https://bootstrap.pypa.io/2.7/get-pip.py
 
 完整命令是
 ```
-curl https://bootstrap.pypa.io/2.7/get-pip.py -o get-pip.py   # 下载安装脚本
+curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py   # 下载安装脚本
 sudo python get-pip.py    # 运行安装脚本
 ```
 
