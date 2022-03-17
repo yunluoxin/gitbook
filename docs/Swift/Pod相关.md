@@ -176,7 +176,7 @@ pod repo push Your-repo-name Your-podspec-file [--allow-warnings]
 
 正确做法是：
 
-- 删除缓存目录~/Library/Caches/Cocoapods里对应库的源码（整个文件夹）
+- 删除缓存目录~/Library/Caches/Cocoapods里对应库的缓存（直接删除整个文件夹或者找到对应库的文件夹，然后删除）
 - 删除 Podfile.lock 以及 Manifest.lock 里对应库的 commit 那一行
 - 重新 `pod install --repo-update` 或者 `pod update 那个库`
 
