@@ -22,7 +22,7 @@
 
 ## 安装过程
 
-1. 由于需要安装 mpapis public key（别问我是啥，哈哈😄），所以需要 gpg。但是 MacOS 原生不支持 gpg，所以我们需要先安装 gpg！而安装 gpg，我们需要 Homebrew，所以没安装 homebrew 的，需要先去安装哦，本文不涉及此！
+1. 由于需要安装 mpapis public key（别问我是啥，哈哈😄），所以需要 gpg。但是 MacOS 原生不支持 gpg，所以我们需要先安装 gpg！而安装 gpg，我们需要 Homebrew，所以没安装 homebrew 的，需要先去安装<sup>[4]</sup>哦，本文不涉及此！
 
    ```shell
    # 安装 gpg
@@ -31,7 +31,7 @@
    gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
    ```
 
-   注意： gpg 的 keys 会发生变化，请打开 [RVM 官网安装教程](https://rvm.io/rvm/install) 看下最新 keys，替换上面的命令！
+   > 注意： gpg 的 keys 会发生变化！如果发现上面命令出现问题，请打开 [RVM 官网安装教程](https://rvm.io/rvm/install) 复制最新 keys，替换上面的命令的 **keys 部分**！ （只要替换 keys， 其他部分不要哦~  即只要替换 **409B6B....** 到最后）
 
 2. 安装 rvm
 
@@ -138,3 +138,4 @@ echo "ruby_url=https://cache.ruby-china.com/pub/ruby" > ~/.rvm/user/db
 2. [How to Install Ruby on macOS with RVM](https://jeffreymorgan.io/articles/ruby-on-macos-with-rvm/)
 3. [RVM 官网安装教程](https://rvm.io/rvm/install)
 4. [Ruby China WIKI](https://ruby-china.org/wiki/rvm-guide)
+5. [ARM64 版本 Mac 的 Homebrew 安装教程](https://zhuanlan.zhihu.com/p/341831809)
