@@ -6,36 +6,37 @@
 
 1. 直接利用 `homebrew` 进行便捷的安装：
 
-```shell
-brew install pyenv
-```
+    ```shell
+    brew install pyenv
+    ```
 
-2. 配置环境变量。将以下内容添加到你的终端配置文件（例如 `~/.zshrc`、`~/.bash_profile` 或者 `~/.bashrc`）中：
+2. 配置环境变量。 
+    
+    1. 执行下面代码就配置好啦：
 
-```shell
-eval "$(pyenv init -)"
-```
+    ```shell
+    echo '\neval "$(pyenv init -)"' >> ~/.zshrc
+    ```
 
-保存并关闭终端配置文件，然后重新打开一个新的终端窗口，或者执行以下命令使配置生效：
+    2. 打开一个新的终端窗口，或者 执行以下命令使配置生效：
 
-```shell
-source ~/.bash_profile  # 或者是你的配置文件名称
-```
-
+    ```shell
+    source ~/.zshrc
+    ```
 
 3. 使用 `pyenv` 安装你所需的 `Python` 版本。例如，安装 Python 3.8.12 和 Python 3.9.7：
 
-```shell
-pyenv install 3.8.12
-pyenv install 3.9.7
-```
+    ```shell
+    pyenv install 3.8.12
+    pyenv install 3.9.7
+    ```
 
 4. 验证
 
-- shell 中执行 ```python global 3.8.12```，然后执行 ```python --version``` 查看输出的是否是 python 3.8.12，打开新的shell窗口再次输出 `python` 版本，看是否对了;
-- shell 中执行 ```python global 3.9.7```，然后执行 ```python --version``` 查看输出的是否是 python 3.9.7，打开新的shell窗口再次输出 `python` 版本，看是否对了
+    - shell 中执行 ```python global 3.8.12```，然后执行 ```python --version``` 查看输出的是否是 python 3.8.12，打开新的shell窗口再次输出 `python` 版本，看是否对了;
+    - shell 中执行 ```python global 3.9.7```，然后执行 ```python --version``` 查看输出的是否是 python 3.9.7，打开新的shell窗口再次输出 `python` 版本，看是否对了
 
-如果都通过✅，恭喜你，`pyenv` 安装成功了！
+    如果都通过✅，恭喜你，`pyenv` 安装成功了！
 
 
 ### 使用
@@ -124,9 +125,13 @@ pyenv install 3.9.7
 
 ## pyenv-virtualenv
 
+> **Python 虚拟环境**：在同一个 `python` 版本中，使用不同版本的 `python` 包，比如A项目用 `requests v1.0`， B项目用 `requests v2.0`。
+
+> 而这个 `pyenv-virtualenv` 其实就是 `virtualenv`，但被整合到了 `pyenv` 中了，更加方便的使用。
+
 ### 安装
 
-其实就是 `virtualenv` 的功能，但被整合到了 `pyenv` 中了，更加方便的使用。它也通过 `homebrew` 直接进行安装：
+它也通过 `homebrew` 直接进行安装：
 
 ```shell
 brew install pyenv-virtualenv
