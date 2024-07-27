@@ -1,4 +1,4 @@
-# MonkeyDev 安装
+# MonkeyDev 安装和使用
 
 ## 环境
 
@@ -60,9 +60,36 @@ mkdir Funny && cd Funny
 
 
 
+## 使用
+
+选中当前应用 `Target` 后，在 `Build Settings` 中，可以修改的一些配置<sup>[1]</sup>：
+
+| 配置字段 | 说明 |
+| ------ | ------ |
+| MONKEYDEV_APP_SUBSTRATE |    -    |
+| MONKEYDEV_CLASS_DUMP	 | 头文件dump，会在testMonkeyDev下生成一个header文件，如果自己使用class-dump了就不需要用他的dump了，设置为NO便可，想要使用就设置成YES |
+| MONKEYDEV_DEFAULT_BUNDLEID |是否使用默认bundleId，针对一些应用对bundleId的检测。设置成YES就会向外暴露原始 ipa 的 bundleId 。 |
+| MONKEYDEV_INSERT_DYLIB |是否注入动态库，这个monkeyDev默认给选了YES就不要动了。因为monkeyDev就是使用注入动态库的方式进行代码注入的 |
+| MONKEYDEV_RESTORE_SYMBOL |是否还原符号表，如果使用fishhook之类需要修改符号表的工具就需要还原符号表。 |
+| MONKEYDEV_TARGET_APP | 使用原始ipa的方式，Optional 为 ipa可选的 |
+| PODS_ROOT | 包后存放的位置 |
+
+
+
 ## 使用中的问题
 
-1. 编译成功，安装和运行失败
+1. Unable to install "XXXX"
 
-   把 **`MONKEYDEV_DEFAULT_BUNDLEID`** 修改为 **`NO`**，即：使用自己的在工程中定义的 bundleID 为 app 包名， 而不是使用之前 app 默认的 `bundleID`。
+   设备上已经存在一个与当前bundleId相同的app。有下面两个解决方案：
+    - 删除掉手机上的相同bundleID 的app 
+    - 把 **`MONKEYDEV_DEFAULT_BUNDLEID`** 修改为 **`NO`**，即：使用自己的在工程中定义的 bundleID 为 app 包名， 而不是使用之前 app 默认的 `bundleID`。
 
+2. 无法安装此App，因为无法验证其完整性。 Failed to verify code signature of xxx
+
+   把 **`MONKEYDEV_DEFAULT_BUNDLEID`** 修改为 **`NO`**
+
+   
+
+## 附录
+
+[1]. [monkeyDev使用及初次使用问题的解决方法](https://blog.csdn.net/dancheng1/article/details/120301439)
