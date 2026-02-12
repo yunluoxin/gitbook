@@ -2,6 +2,21 @@
 
 ## 安装
 
+## 一键安装 - 2026.01.13更新
+
+```shell
+/bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
+```
+
+### 卸载
+
+```shell
+/bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/HomebrewUninstall.sh)"
+```
+
+> ----------------- 如果可以。下面都不用看了 ⚠️  -----------------
+
+
 ### 安装 ARM 版 Homebrew
 
 ```shell
