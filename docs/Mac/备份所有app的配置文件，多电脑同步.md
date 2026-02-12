@@ -97,7 +97,11 @@ chezmoi apply
 chezmoi init --apply https://github.com/$GITHUB_USERNAME/dotfiles.git
 
 # 如果是 github 的仓库，并且你使用的仓库名叫做 dotfiles，可以更简单：
+# 拉取并应用到本地电脑
 chezmoi init --apply $GITHUB_USERNAME
+
+# 仅仅拉取github上名为xxx的仓库进行初始化
+chezmoi init $GITHUB_USERNAME
 ```
 
 ## 其他
